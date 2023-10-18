@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Attributes
     [SerializeField]
-    private float moveSpeed = 5f;
+    private float moveSpeed;
 
+    #region Camera
     private Camera mainCamera;
     private float cameraWidth;
+    #endregion
 
     void Start()
     {
@@ -22,7 +25,7 @@ public class Player : MonoBehaviour
 
         Vector3 position = transform.position + new Vector3(xInput * moveSpeed * Time.deltaTime, 0, 0);
 
-        position.x = Mathf.Clamp(position.x, -cameraWidth, cameraWidth);
+        position.x = Mathf.Clamp(position.x, -cameraWidth + 1, cameraWidth - 1);
 
         transform.position = position;
     }
