@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     //Attributes
     [SerializeField]
-    private float moveSpeed;
+    private float moveSpeed = 5f;
 
     #region Camera
     private Camera mainCamera;
